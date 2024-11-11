@@ -1,0 +1,28 @@
+drm drm-fixes 2d5404caa8c7bb5c4e0435f94b28834ae5456623
+	Linux 6.12-rc7
+drm-misc drm-misc-fixes 14062c267f09c7b33a8d5a7d9eb3908b9941aae4
+	Merge drm/drm-fixes into drm-misc-fixes
+drm-intel drm-intel-fixes 2d5404caa8c7bb5c4e0435f94b28834ae5456623
+	Linux 6.12-rc7
+drm-xe drm-xe-fixes 514447a1219021298329ce586536598c3b4b2dc0
+	drm/xe: Stop accumulating LRC timestamp on job_free
+drm drm-next 56b70bf9ec460ad7d7d94dfb7a54a8829741e16e
+	Merge tag 'drm-misc-next-2024-11-08' of https://gitlab.freedesktop.org/drm/misc/kernel into drm-next
+drm-misc drm-misc-next-fixes ba2b9de0c1ac2abfbe663414a292c5881e64c361
+	drm/tegra: fix potential uninitialized variable use
+drm-intel drm-intel-next-fixes e860513f56d8428fcb2bd0282ac8ab691a53fc6c
+	drm/i915/dp: Fix colorimetry detection
+drm-xe drm-xe-next-fixes d7126c0cfc137a580eba92bd82b6d288bd43961d
+	Merge tag 'drm-xe-next-fixes-2024-09-19' of https://gitlab.freedesktop.org/drm/xe/kernel into drm-next
+drm-misc drm-misc-next d84927a4ad9244c974061b6299c5169399813ddb
+	drm/bridge: cdns-mhdp8546: Remove unused functions
+drm-intel drm-intel-next 87d052bfe6ebd7da995297170a23546624d06fa2
+	drm/i915/psr: stop using bitwise OR with booleans in wm_optimization_wa()
+drm-intel drm-intel-gt-next b939a08bc378a7c716ad7a9486b48794b95d22f5
+	drm/i915/guc: Flush ct receive tasklet during reset preparation
+drm-xe drm-xe-next f7278da76da2589af13bc8a487d0e8f8abdecc99
+	drm/xe/guc: Do not assert CTB state while sending MMIO
+drm-intel topic/core-for-CI 8db9a55ae3149e377b72f80da5078e347f0fde3c
+	x86/apic: Stop the TSC Deadline timer during lapic timer shutdown
+drm-xe topic/xe-for-CI fefe873265210efca14d239382df9243cb6387b9
+	drm/xe/ptl: Define HuC FW version for PTL
