@@ -1,0 +1,28 @@
+drm drm-fixes 9b1c673a1648cc3501a3b7719db2bec931cf00f7
+	Merge tag 'drm-xe-fixes-2025-01-16' of https://gitlab.freedesktop.org/drm/xe/kernel into drm-fixes
+drm-misc drm-misc-fixes e0f63bc68f59d281e2d06e596f6c1bd9382a15cd
+	drm/print: Include drm_device.h
+drm-intel drm-intel-fixes ffd294d346d185b70e28b1a28abe367bbfe53c04
+	Linux 6.13
+drm-xe drm-xe-fixes b1231ff7ea0689d04040a44864c265bc11612fa8
+	drm/xe: Mark ComputeCS read mode as UC on iGPU
+drm drm-next 64179a1416e1420a34226ab3beb5f84710953d16
+	Merge tag 'drm-misc-next-fixes-2025-01-24' of https://gitlab.freedesktop.org/drm/misc/kernel into drm-next
+drm-misc drm-misc-next-fixes 6e64d6b3a3c39655de56682ec83e894978d23412
+	drm/v3d: Assign job pointer to NULL before signaling the fence
+drm-intel drm-intel-next-fixes 951a6bf30667307e7901aac5e74e50dadd5ccfc7
+	Merge tag 'drm-misc-next-fixes-2025-01-16' of https://gitlab.freedesktop.org/drm/misc/kernel into drm-next
+drm-xe drm-xe-next-fixes 951a6bf30667307e7901aac5e74e50dadd5ccfc7
+	Merge tag 'drm-misc-next-fixes-2025-01-16' of https://gitlab.freedesktop.org/drm/misc/kernel into drm-next
+drm-misc drm-misc-next e2a81c0cd7de6cb063058be304b18f200c64802b
+	MAINTAINERS: Remove Noralf Trønnes as driver maintainer
+drm-intel drm-intel-next 2e0727c347467775a2dfa7d850a3a029f3212e58
+	drm/i915/lspcon: do not hardcode settle timeout
+drm-intel drm-intel-gt-next 93b69c0482cf2a18d078fb1edefb4b84130838af
+	drm/i915: Remove unused live_context_for_engine
+drm-xe drm-xe-next ef34861098c081a6222dbbe84439b571fa35c8a0
+	drm/xe: Upgrade complaint about missing slice info
+drm-intel topic/core-for-CI 177ab7c0296b3df8bf2d2d9c51d47db10f7df7e0
+	Revert "lockdep: Enable PROVE_RAW_LOCK_NESTING with PROVE_LOCKING."
+drm-xe topic/xe-for-CI 6ea369b34748ef5377f23e24b577912585ce5445
+	drm/xe/ptl: Define HuC FW version for PTL
