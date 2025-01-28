@@ -1,0 +1,28 @@
+drm drm-fixes 9b1c673a1648cc3501a3b7719db2bec931cf00f7
+	Merge tag 'drm-xe-fixes-2025-01-16' of https://gitlab.freedesktop.org/drm/xe/kernel into drm-fixes
+drm-misc drm-misc-fixes fd39c41bcd82d5ebaaebadb944eab5598c668a90
+	drm/ast: astdp: Fix timeout for enabling video signal
+drm-intel drm-intel-fixes ffd294d346d185b70e28b1a28abe367bbfe53c04
+	Linux 6.13
+drm-xe drm-xe-fixes b1231ff7ea0689d04040a44864c265bc11612fa8
+	drm/xe: Mark ComputeCS read mode as UC on iGPU
+drm drm-next 64179a1416e1420a34226ab3beb5f84710953d16
+	Merge tag 'drm-misc-next-fixes-2025-01-24' of https://gitlab.freedesktop.org/drm/misc/kernel into drm-next
+drm-misc drm-misc-next-fixes 6e64d6b3a3c39655de56682ec83e894978d23412
+	drm/v3d: Assign job pointer to NULL before signaling the fence
+drm-intel drm-intel-next-fixes 951a6bf30667307e7901aac5e74e50dadd5ccfc7
+	Merge tag 'drm-misc-next-fixes-2025-01-16' of https://gitlab.freedesktop.org/drm/misc/kernel into drm-next
+drm-xe drm-xe-next-fixes 951a6bf30667307e7901aac5e74e50dadd5ccfc7
+	Merge tag 'drm-misc-next-fixes-2025-01-16' of https://gitlab.freedesktop.org/drm/misc/kernel into drm-next
+drm-misc drm-misc-next c51549cf16d39398499445f6b0004cf84d158265
+	dt-bindings: display: renesas,du: add top-level constraints
+drm-intel drm-intel-next 8305d47333d8e178890ae4990c7f0c8dbf5f4ace
+	drm/i915: Give i915 and xe each their own display tracepoints
+drm-intel drm-intel-gt-next 54cb7288900ba964bd525d004b9618efb52f724b
+	drm/i915/guc/slpc: Add helper function slpc_measure_power
+drm-xe drm-xe-next fa8ffaae1b15236b8afb0fbbc04117ff7c900a83
+	drm/xe/bmg: Add new PCI IDs
+drm-intel topic/core-for-CI 177ab7c0296b3df8bf2d2d9c51d47db10f7df7e0
+	Revert "lockdep: Enable PROVE_RAW_LOCK_NESTING with PROVE_LOCKING."
+drm-xe topic/xe-for-CI 6ea369b34748ef5377f23e24b577912585ce5445
+	drm/xe/ptl: Define HuC FW version for PTL
