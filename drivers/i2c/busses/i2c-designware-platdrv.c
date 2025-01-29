@@ -101,7 +101,7 @@ static int bt1_i2c_request_regs(struct dw_i2c_dev *dev)
 }
 #endif
 
-static int txgbe_i2c_request_regs(struct dw_i2c_dev *dev)
+static int regmap_i2c_request_regs(struct dw_i2c_dev *dev)
 {
 	dev->map = dev_get_regmap(dev->dev->parent, NULL);
 	if (!dev->map)
@@ -128,7 +128,8 @@ static int dw_i2c_plat_request_regs(struct dw_i2c_dev *dev)
 		ret = bt1_i2c_request_regs(dev);
 		break;
 	case MODEL_WANGXUN_SP:
-		ret = txgbe_i2c_request_regs(dev);
+	case MODEL_AMC:
+		ret = regmap_i2c_request_regs(dev);
 		break;
 	default:
 		dev->base = devm_platform_ioremap_resource(pdev, 0);
@@ -223,6 +224,12 @@ static int dw_i2c_plat_probe(struct platform_device *pdev)
 		dev->flags = MODEL_WANGXUN_SP | USE_POLLING_MODE;
 
 	dev->dev = device;
+
+	if (device_property_present(&pdev->dev, "amc,i2c-snps-model"))
+		dev->flags = MODEL_AMC | USE_POLLING_MODE;
+
+	dev->dev = &pdev->dev;
+
 	dev->irq = irq;
 	platform_set_drvdata(pdev, dev);
 

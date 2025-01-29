@@ -7,6 +7,7 @@
 
 #include <drm/drm_managed.h>
 
+#include "xe_amc.h"
 #include "xe_device.h"
 #include "xe_ggtt.h"
 #include "xe_gt.h"
@@ -171,6 +172,8 @@ int xe_tile_init_noalloc(struct xe_tile *tile)
 		return err;
 
 	xe_wa_apply_tile_workarounds(tile);
+
+	amc_i2c_probe(tile);
 
 	err = xe_tile_sysfs_init(tile);
 

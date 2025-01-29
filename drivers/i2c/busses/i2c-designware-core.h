@@ -316,6 +316,7 @@ struct dw_i2c_dev {
 #define MODEL_BAIKAL_BT1			(2 << 8)
 #define MODEL_AMD_NAVI_GPU			(3 << 8)
 #define MODEL_WANGXUN_SP			(4 << 8)
+#define	MODEL_AMC				(5 << 8)
 
 #define MODEL_MASK				GENMASK(11, 8)
 

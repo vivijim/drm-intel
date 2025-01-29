@@ -543,6 +543,26 @@
 #define   CCS_MODE_CSLICE(cslice, ccs) \
 	((ccs) << ((cslice) * CCS_MODE_CSLICE_WIDTH))
 
+/*
+ * FIXME: These offsets need to be updated once the HW definition is complete.
+ */
+#define REG_SG_REMAP_ADDR_BASE 0x00
+#define AXI_BASE_OFFSET 0xF6000
+#define I2C_BASE_OFFSET 0xF7000
+#define I2C_IOSF2AXI_BRIDGE 0xD9000
+
+#define CLIENT_DISC_COOKIE  XE_REG(REG_SG_REMAP_ADDR_BASE + 0x0164)
+#define CLIENT_DISC_ADDRESS XE_REG(REG_SG_REMAP_ADDR_BASE + 0x0168)
+
+/*
+ * Bridge-I2C Private CR space
+ */
+#define AXI_ERRSTATUS    XE_REG(I2C_IOSF2AXI_BRIDGE + 0x00)
+#define AXI_PMCTL        XE_REG(I2C_IOSF2AXI_BRIDGE + 0x04)
+#define AXI_PARITY_ERROR XE_REG(I2C_IOSF2AXI_BRIDGE + 0x08)
+
+#define PMCSR XE_REG(0x0000)
+
 #define FORCEWAKE_ACK_GT			XE_REG(0x130044)
 
 /* Applicable for all FORCEWAKE_DOMAIN and FORCEWAKE_ACK_DOMAIN regs */

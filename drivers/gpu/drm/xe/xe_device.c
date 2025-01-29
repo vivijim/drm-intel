@@ -22,6 +22,7 @@
 #include "instructions/xe_gpu_commands.h"
 #include "regs/xe_gt_regs.h"
 #include "regs/xe_regs.h"
+#include "xe_amc.h"
 #include "xe_bo.h"
 #include "xe_debugfs.h"
 #include "xe_devcoredump.h"
@@ -897,6 +898,7 @@ err_fini_gt:
 	}
 
 err:
+	amc_i2c_remove(xe);
 	xe_display_fini(xe);
 	return err;
 }
@@ -926,6 +928,8 @@ void xe_device_remove(struct xe_device *xe)
 
 	for_each_gt(gt, xe, id)
 		xe_gt_remove(gt);
+
+	amc_i2c_remove(xe);
 }
 
 void xe_device_shutdown(struct xe_device *xe)

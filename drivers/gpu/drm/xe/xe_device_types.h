@@ -12,6 +12,7 @@
 #include <drm/drm_file.h>
 #include <drm/ttm/ttm_device.h>
 
+#include "xe_amc.h"
 #include "xe_devcoredump_types.h"
 #include "xe_heci_gsc.h"
 #include "xe_lmtt_types.h"
@@ -232,6 +233,8 @@ struct xe_tile {
 		/** @pcode.lock: protecting tile's PCODE mailbox data */
 		struct mutex lock;
 	} pcode;
+
+	struct amc_i2c_info amc;
 
 	/** @migrate: Migration helper for vram blits and clearing */
 	struct xe_migrate *migrate;
