@@ -652,7 +652,7 @@ static u32 i2c_dw_read_clear_intrbits(struct dw_i2c_dev *dev)
 	 *
 	 * The raw version might be useful for debugging purposes.
 	 */
-	if (!(dev->flags & ACCESS_POLLING)) {
+	if (!(dev->flags & USE_POLLING_MODE)) {
 		regmap_read(dev->map, DW_IC_INTR_STAT, &stat);
 	} else {
 		regmap_read(dev->map, DW_IC_RAW_INTR_STAT, &stat);
@@ -778,7 +778,7 @@ static int i2c_dw_wait_transfer(struct dw_i2c_dev *dev)
 	unsigned int stat;
 	int ret;
 
-	if (!(dev->flags & ACCESS_POLLING)) {
+	if (!(dev->flags & USE_POLLING_MODE)) {
 		ret = wait_for_completion_timeout(&dev->cmd_complete, timeout);
 	} else {
 		timeout += jiffies;
@@ -1062,7 +1062,7 @@ int i2c_dw_probe_master(struct dw_i2c_dev *dev)
 	__i2c_dw_write_intr_mask(dev, 0);
 	i2c_dw_release_lock(dev);
 
-	if (!(dev->flags & ACCESS_POLLING)) {
+	if (!(dev->flags & USE_POLLING_MODE)) {
 		ret = devm_request_irq(dev->dev, dev->irq, i2c_dw_isr,
 				       irq_flags, dev_name(dev->dev), dev);
 		if (ret) {

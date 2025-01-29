@@ -309,8 +309,8 @@ struct dw_i2c_dev {
 
 #define ACCESS_INTR_MASK			BIT(0)
 #define ACCESS_NO_IRQ_SUSPEND			BIT(1)
-#define ARBITRATION_SEMAPHORE			BIT(2)
-#define ACCESS_POLLING				BIT(3)
+#define USE_ARBITRATION_SEMAPHORE		BIT(2)
+#define USE_POLLING_MODE			BIT(3)
 
 #define MODEL_MSCC_OCELOT			(1 << 8)
 #define MODEL_BAIKAL_BT1			(2 << 8)
@@ -366,7 +366,7 @@ static inline void __i2c_dw_disable_nowait(struct dw_i2c_dev *dev)
 static inline void __i2c_dw_write_intr_mask(struct dw_i2c_dev *dev,
 					    unsigned int intr_mask)
 {
-	unsigned int val = dev->flags & ACCESS_POLLING ? 0 : intr_mask;
+	unsigned int val = dev->flags & USE_POLLING_MODE ? 0 : intr_mask;
 
 	regmap_write(dev->map, DW_IC_INTR_MASK, val);
 	dev->sw_mask = intr_mask;
@@ -375,7 +375,7 @@ static inline void __i2c_dw_write_intr_mask(struct dw_i2c_dev *dev,
 static inline void __i2c_dw_read_intr_mask(struct dw_i2c_dev *dev,
 					   unsigned int *intr_mask)
 {
-	if (!(dev->flags & ACCESS_POLLING))
+	if (!(dev->flags & USE_POLLING_MODE))
 		regmap_read(dev->map, DW_IC_INTR_MASK, intr_mask);
 	else
 		*intr_mask = dev->sw_mask;

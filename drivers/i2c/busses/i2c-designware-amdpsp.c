@@ -284,7 +284,7 @@ int i2c_dw_amdpsp_probe_lock_support(struct dw_i2c_dev *dev)
 	if (!dev)
 		return -ENODEV;
 
-	if (!(dev->flags & ARBITRATION_SEMAPHORE))
+	if (!(dev->flags & USE_ARBITRATION_SEMAPHORE))
 		return -ENODEV;
 
 	/* Allow to bind only one instance of a driver */

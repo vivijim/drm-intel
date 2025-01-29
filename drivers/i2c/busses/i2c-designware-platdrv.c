@@ -220,7 +220,7 @@ static int dw_i2c_plat_probe(struct platform_device *pdev)
 
 	dev->flags = (uintptr_t)device_get_match_data(device);
 	if (device_property_present(device, "wx,i2c-snps-model"))
-		dev->flags = MODEL_WANGXUN_SP | ACCESS_POLLING;
+		dev->flags = MODEL_WANGXUN_SP | USE_POLLING_MODE;
 
 	dev->dev = device;
 	dev->irq = irq;
@@ -346,7 +346,7 @@ static const struct acpi_device_id dw_i2c_acpi_match[] = {
 	{ "808622C1", ACCESS_NO_IRQ_SUSPEND },
 	{ "AMD0010", ACCESS_INTR_MASK },
 	{ "AMDI0010", ACCESS_INTR_MASK },
-	{ "AMDI0019", ACCESS_INTR_MASK | ARBITRATION_SEMAPHORE },
+	{ "AMDI0019", ACCESS_INTR_MASK | USE_ARBITRATION_SEMAPHORE },
 	{ "AMDI0510", 0 },
 	{ "APMC0D0F", 0 },
 	{ "FUJI200B", 0 },
