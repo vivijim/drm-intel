@@ -312,10 +312,11 @@ struct dw_i2c_dev {
 #define ARBITRATION_SEMAPHORE			BIT(2)
 #define ACCESS_POLLING				BIT(3)
 
-#define MODEL_MSCC_OCELOT			BIT(8)
-#define MODEL_BAIKAL_BT1			BIT(9)
-#define MODEL_AMD_NAVI_GPU			BIT(10)
-#define MODEL_WANGXUN_SP			BIT(11)
+#define MODEL_MSCC_OCELOT			(1 << 8)
+#define MODEL_BAIKAL_BT1			(2 << 8)
+#define MODEL_AMD_NAVI_GPU			(3 << 8)
+#define MODEL_WANGXUN_SP			(4 << 8)
+
 #define MODEL_MASK				GENMASK(11, 8)
 
 /*
